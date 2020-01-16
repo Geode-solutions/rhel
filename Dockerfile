@@ -5,7 +5,7 @@ FROM centos:7
 # Install.
 RUN \
   yum update -y && \
-  yum install -y git gcc gcc-c++ make wget python3-devel && \
+  yum install -y git gcc gcc-c++ make wget python2-devel && \
   wget https://cmake.org/files/v3.12/cmake-3.12.3.tar.gz && \
   tar zxvf cmake-3.* && \
   cd cmake-3.* && \
