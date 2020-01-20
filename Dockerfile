@@ -6,7 +6,7 @@ FROM centos:7
 RUN \
   yum update -y && \
   yum install -y git gcc gcc-c++ make wget python2-devel && \
-  wget https://cmake.org/files/v3.12/cmake-3.12.3.tar.gz && \
+  wget https://cmake.org/files/v3.15/cmake-3.15.0.tar.gz && \
   tar zxvf cmake-3.* && \
   cd cmake-3.* && \
   ./bootstrap --prefix=/usr/local && \
