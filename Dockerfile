@@ -3,7 +3,7 @@ FROM centos:7
 
 # Install.
 RUN \
-  yum install -y epel-release && \
+  yum install -y epel-release && \
   yum update -y && \
   yum install -y git gcc gcc-c++ make curl wget bzip2 python2-devel python-pip epel-release mesa-libGL-devel libXt-devel libX11-devel openssl-devel && \
   pip install --upgrade pip && \
