@@ -18,4 +18,4 @@ jobs:
     - name: Build the Docker image
       run: |
         docker build . --file Dockerfile --tag geodesolutions/centos
-        docker push
+        docker push geodesolutions/centos
