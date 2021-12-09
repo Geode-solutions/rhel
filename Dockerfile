@@ -4,7 +4,7 @@ FROM quay.io/pypa/manylinux2014_x86_64
 # Install.
 RUN \
   yum install -y epel-release && \
-  curl -sL https://rpm.nodesource.com/setup_16.x | bash - && \
+  curl -sL https://rpm.nodesource.com/setup_14.x | bash - && \
   yum update -y && \
   yum install -y openssl-devel openssl-static valgrind-devel nodejs
 
