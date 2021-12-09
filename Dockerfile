@@ -6,6 +6,7 @@ RUN \
   yum install -y epel-release && \
   yum update -y && \
   yum install -y openssl-devel openssl-static valgrind-devel dnf && \
+  dnf upgrade && \
   dnf module install nodejs:16
 
 # Set environment variables.
