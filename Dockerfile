@@ -4,10 +4,9 @@ FROM quay.io/pypa/manylinux2014_x86_64
 # Install.
 RUN \
   yum install -y epel-release && \
+  curl -sL https://rpm.nodesource.com/setup_16.x | sudo -E bash - && \
   yum update -y && \
-  yum install -y openssl-devel openssl-static valgrind-devel dnf && \
-  dnf upgrade && \
-  dnf module install nodejs:16
+  yum install -y openssl-devel openssl-static valgrind-devel nodejs
 
 # Set environment variables.
 ENV HOME /root
