@@ -3,13 +3,13 @@ FROM quay.io/pypa/manylinux2014_x86_64
 
 # Install.
 RUN \
-  yum install -y epel-release yum-utils && \
+  yum install -y epel-release yum-utils device-mapper-persistent-data lvm2 && \
   curl -sL https://rpm.nodesource.com/setup_14.x | bash - && \
   yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo \
   yum update -y && \
   yum install -y openssl-devel openssl-static valgrind-devel nodejs docker-ce docker-ce-cli containerd.io
 
-RUN systemctl start docker
+RUN sudo systemctl start docker
 
 # Set environment variables.
 ENV HOME /root
