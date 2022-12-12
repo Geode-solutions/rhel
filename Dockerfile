@@ -8,9 +8,9 @@ RUN \
   yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo \
   yum update -y && \
   yum install -y dnf openssl-devel openssl-static valgrind-devel nodejs docker-ce docker-ce-cli containerd.io tmate openssh-server openssh-clients && \
-  dnf install 'dnf-command(config-manager)' && \
+  dnf install -y 'dnf-command(config-manager)' && \
   dnf config-manager --add-repo https://cli.github.com/packages/rpm/gh-cli.repo && \
-  dnf install gh
+  dnf install -y gh
 
 # Set environment variables.
 ENV HOME /root
