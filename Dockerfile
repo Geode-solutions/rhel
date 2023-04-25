@@ -12,7 +12,8 @@ RUN \
   tar -xzf openssl-1.1.1t.tar.gz && \
   cd openssl-1.1.1t && \
   ./config no-shared no-comp && \
-  make -j && make install
+  make -j && make install && \
+  cd .. && rm -rf openssl-1.1.1t*
 
 # Set environment variables.
 ENV HOME /root
