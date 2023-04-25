@@ -7,10 +7,17 @@ RUN \
   curl -sL https://rpm.nodesource.com/setup_14.x | bash - && \
   yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo \
   yum update -y && \
-  yum install -y dnf zlib-devel openssl-devel ninja-build openssl-static valgrind-devel nodejs docker-ce docker-ce-cli containerd.io tmate openssh-server openssh-clients && \
+  yum install -y dnf zlib-devel perl-core pcre-devel wget ninja-build valgrind-devel nodejs docker-ce docker-ce-cli containerd.io tmate openssh-server openssh-clients && \
   dnf install -y 'dnf-command(config-manager)' && \
   dnf config-manager --add-repo https://cli.github.com/packages/rpm/gh-cli.repo && \
-  dnf install -y gh
+  dnf install -y gh && \
+  wget https://ftp.openssl.org/source/openssl-1.1.1t.tar.gz && \
+  tar -xzvf openssl-1.1.1t.tar.gz && \
+  cd openssl-1.1.1t && \
+  ./config --prefix=/usr --openssldir=/etc/ssl --libdir=lib no-shared zlib-dynamic && \
+  make -j && \
+  make install && \
+  echo "export LD_LIBRARY_PATH=/usr/local/lib:/usr/local/lib64" >> /etc/profile.d/openssl.sh  
 
 # Set environment variables.
 ENV HOME /root
