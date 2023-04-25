@@ -10,7 +10,9 @@ RUN \
   yum install -y dnf zlib-devel openssl11-static ninja-build valgrind-devel nodejs docker-ce docker-ce-cli containerd.io tmate openssh-server openssh-clients && \
   dnf install -y 'dnf-command(config-manager)' && \
   dnf config-manager --add-repo https://cli.github.com/packages/rpm/gh-cli.repo && \
-  dnf install -y gh
+  dnf install -y gh && \
+  mv /usr/lib64/openssl11 /usr/lib64/openssl && \
+  mv /usr/include/openssl11 /usr/include/openssl
 
 # Set environment variables.
 ENV HOME /root
