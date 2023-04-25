@@ -7,10 +7,7 @@ RUN \
   curl -sL https://rpm.nodesource.com/setup_14.x | bash - && \
   yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo \
   yum update -y && \
-  yum install -y dnf zlib-devel openssl-static ninja-build valgrind-devel nodejs docker-ce docker-ce-cli containerd.io tmate openssh-server openssh-clients && \
-  dnf install -y 'dnf-command(config-manager)' && \
-  dnf config-manager --add-repo https://cli.github.com/packages/rpm/gh-cli.repo && \
-  dnf install -y gh
+  yum install -y dnf zlib-devel openssl-static ninja-build valgrind-devel nodejs docker-ce docker-ce-cli containerd.io
 
 # Set environment variables.
 ENV HOME /root
