@@ -5,9 +5,8 @@ FROM quay.io/pypa/manylinux2014_x86_64
 RUN \
   yum install -y epel-release yum-utils && \
   curl -sL https://rpm.nodesource.com/setup_14.x | bash - && \
-  yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo \
   yum update -y && \
-  yum install -y dnf wget ninja-build valgrind-devel nodejs docker-ce docker-ce-cli containerd.io && \
+  yum install -y dnf wget ninja-build valgrind-devel nodejs && \
   wget https://www.openssl.org/source/openssl-1.1.1t.tar.gz && \
   tar -xzf openssl-1.1.1t.tar.gz && \
   cd openssl-1.1.1t && \
