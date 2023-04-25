@@ -7,7 +7,7 @@ RUN \
   curl -sL https://rpm.nodesource.com/setup_14.x | bash - && \
   yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo \
   yum update -y && \
-  yum install -y dnf zlib-devel openssl-static ninja-build valgrind-devel nodejs docker-ce docker-ce-cli containerd.io
+  yum install -y dnf zlib-static openssl-static ninja-build valgrind-devel nodejs docker-ce docker-ce-cli containerd.io
 
 # Set environment variables.
 ENV HOME /root
