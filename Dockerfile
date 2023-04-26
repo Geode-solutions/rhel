@@ -7,6 +7,9 @@ RUN \
   curl -sL https://rpm.nodesource.com/setup_14.x | bash - && \
   yum update -y && \
   yum install -y dnf wget ninja-build valgrind-devel nodejs && \
+  dnf install -y 'dnf-command(config-manager)' && \
+  dnf config-manager --add-repo https://cli.github.com/packages/rpm/gh-cli.repo && \
+  dnf install -y gh && \
   wget https://www.openssl.org/source/openssl-1.1.1t.tar.gz && \
   tar -xzf openssl-1.1.1t.tar.gz && \
   cd openssl-1.1.1t && \
