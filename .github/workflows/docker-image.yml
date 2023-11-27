@@ -8,7 +8,7 @@ jobs:
   build:
     uses: Geode-solutions/actions/.github/workflows/docker-build-squash-push.yml@master
     with:
-      image_name: 'centos'
+      image_name: 'rhel'
       tag: 'master'
     secrets: 
       TOKEN: ${{secrets.GITHUB_TOKEN}}
