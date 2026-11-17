@@ -6,7 +6,7 @@ RUN \
   yum install -y epel-release yum-utils && \
   curl -sL https://rpm.nodesource.com/setup_24.x | bash - && \
   yum update -y && \
-  yum install -y dnf wget ninja-build zstd valgrind-devel nodejs perl-Pod-Html perl-IPC-Cmd perl-Time-Piece && \
+  yum install -y dnf wget ninja-build zstd valgrind-devel nodejs perl-Pod-Html perl-IPC-Cmd perl-Time-Piece ccache && \
   dnf install -y 'dnf-command(config-manager)' && \
   dnf config-manager --add-repo https://cli.github.com/packages/rpm/gh-cli.repo && \
   dnf install -y gh
